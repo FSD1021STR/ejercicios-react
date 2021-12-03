@@ -3,11 +3,11 @@ import Card from "../componentes/card";
 import { personas } from "../constantes";
 import "./ejercicio1.css";
 
+//Crea un formulario que añada una persona mas al array de personas
+
 const Ejercicio7 = () => {
   const [name, setName] = useState("");
-  const [surname, setSurname] = useState("");
-  const [age, setAge] = useState(0);
-  const [image, setImage] = useState("");
+    // Añade las variables (useState) que sean necesarias 
 
   const personasCards = personas.map((persona) => (
     <Card
@@ -22,9 +22,10 @@ const Ejercicio7 = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    personasCards.push(
+    //Que metodo añadia un nuevo elemento a un array
+    /*personasCards. ??? (
       <Card src={image} name={name} surname={surname} age={age} />
-    );
+    );*/
     setResults(personasCards);
   };
 
@@ -35,16 +36,14 @@ const Ejercicio7 = () => {
         <label>Nombre: </label>
         <input onChange={(evento) => setName(evento.target.value)} />
         <br />
-        <label>Apellido: </label>
-        <input onChange={(evento) => setSurname(evento.target.value)} />
+        {/*Apellido */}
         <br />
-        <label>Edad: </label>
-        <input onChange={(evento) => setAge(evento.target.value)} />
+        {/*Edad*/}
         <br />
         <label>Imagen (debe ser una url): </label>
-        <input onChange={(evento) => setImage(evento.target.value)} />
+        {/*Input para recoger la URL de la imagen*/}
         <br />
-        <button type="submit"> Submit!</button>
+        {/*Boton Submit*/}
       </form>
       <div className="card">{results}</div>
     </div>

@@ -3,6 +3,8 @@ import Card from "../componentes/card";
 import { personas } from "../constantes";
 import "./ejercicio1.css";
 
+// Esta vez queremos buscar una persona, añade un input para el texto y el boton que active la acción
+
 const Ejercicio5 = () => {
   const [name, setName] = useState();
   const personasCards = personas.map((persona) => (
@@ -16,24 +18,16 @@ const Ejercicio5 = () => {
   const [results, setResults] = useState(personasCards);
 
   const handleSearch = () => {
-    const encontrado = personas.find((persona) => persona.name === name);
-
-    setResults(
-      <Card
-        src={encontrado.src}
-        name={encontrado.name}
-        surname={encontrado.surname}
-        age={encontrado.age}
-      />
-    );
+    //Busca por nombre en array de personas, usa setResults para que muestre el resultado
+    // recuerda que el metodo para buscar devuelve una sola opción
   };
 
   return (
     <div className="espace">
       <h1> Busca a tu personaje favorito: </h1>
       <label>Introduce el nombre: </label>
-      <input onChange={(evento) => setName(evento.target.value)} />
-      <button onClick={() => handleSearch()}> Busca! </button>
+      {/*input para la busqueda*/}
+      {/*boton para realizar la busqueda*/}
       <div className="card">{results}</div>
     </div>
   );

@@ -3,6 +3,11 @@ import Card from "../componentes/card";
 import { personas } from "../constantes";
 import "./ejercicio1.css";
 
+//Une los 3 ejercicios anteriores
+//Pon el filtrado por edad
+//La busqueda por nombre
+//Y un boton que muestre todas las opciones
+
 const Ejercicio6 = () => {
   const [name, setName] = useState();
   const [age, setAge] = useState();
@@ -19,44 +24,15 @@ const Ejercicio6 = () => {
   const [results, setResults] = useState(personasCards);
 
   const handleSearch = () => {
-    const encontrado = personas.find((persona) => persona.name === name);
-
-    setResults(
-      <Card
-        src={encontrado.src}
-        name={encontrado.name}
-        surname={encontrado.surname}
-        age={encontrado.age}
-      />
-    );
+    /*buscar*/
   };
 
   const handleFilter = () => {
-    const filtrado = personas
-      .filter((persona) => persona.age > age)
-      .map((persona) => (
-        <Card
-          src={persona.src}
-          name={persona.name}
-          surname={persona.surname}
-          age={persona.age}
-        />
-      ));
-
-    setResults(filtrado);
+    //filtrar por edad
   };
 
   const handleMap = () => {
-    const map = personas.map((persona) => (
-      <Card
-        src={persona.src}
-        name={persona.name}
-        surname={persona.surname}
-        age={persona.age}
-      />
-    ));
-
-    setResults(map);
+    //Mostrar todos los resultados
   }
 
   return (
@@ -66,12 +42,9 @@ const Ejercicio6 = () => {
       <input onChange={(evento) => setName(evento.target.value)} />
       <button onClick={() => handleSearch()}> Busca! </button>
       <br />
-      <label>Elije edad: </label>
-      <input type="number" onChange={(evento) => setAge(evento.target.value)} />
-      <button onClick={() => handleFilter()}> Busca! </button>
+      {/* Introduce edad*/}
       <br />
-      <label>Muestralas a todas </label>
-      <button onClick={() => handleMap()}> Muestra! </button>
+      {/*Añade boton para mostrarlas todas*/}
       <br />
       <div className="card">{results}</div>
     </div>
