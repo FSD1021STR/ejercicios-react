@@ -11,7 +11,7 @@ const Ejercicio2 = () => {
     <div className="espace">
       <h1> Personas mayores de 50 </h1>
       <div className="card">
-        {/* filtra las card de personas por edad */}
+        {personas.filter((persona) => persona.age > 50)
       </div>
     </div>
   );
