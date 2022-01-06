@@ -7,10 +7,14 @@ import "./ejercicio1.css";
 
 
 const Ejercicio1 = () => {
+  
   return (
     <div className="espace">
       <h1> Personas </h1>
       <div className="card">
+        {personas.map((persona) => (<Card src={persona.src} 
+        name={persona.name} surname={persona.surname} 
+        age={persona.age}/>))}
         {/*Map de las cards con la info de cada persona*/}
       </div>
     </div>
